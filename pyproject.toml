@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "bodhiext.sentence_transformers"
-version = "0.1.0"
+version = "0.1.1"
 description = "Bodhilib plugin for Sentence Transformer Embedder"
 authors = []
 readme = "README.md"
