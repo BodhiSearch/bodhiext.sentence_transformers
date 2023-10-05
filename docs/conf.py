@@ -36,7 +36,10 @@ source_suffix = [".rst", ".md", ".ipynb", ".myst"]
 master_doc = "index"
 pygments_style = "sphinx"
 todo_include_todos = False
-
+nitpick_ignore = [
+    ("py:class", "bodhilib.Embedding"),
+    ("py:class", "SupportsText"),
+]
 # -- Options for HTML output -------------------------------------------
 html_theme = "sphinx_rtd_theme"
 html_static_path = ["_static"]
@@ -44,6 +47,7 @@ html_static_path = ["_static"]
 intersphinx_mapping = {
     "python": ("https://docs.python.org/", None),
     "bodhilib": ("https://bodhilib.readthedocs.io/en/stable/", None),
+    "sentence_transformer": ("https://www.sbert.net/", None),
 }
 autodoc_default_options = {
     "typehints": "description",

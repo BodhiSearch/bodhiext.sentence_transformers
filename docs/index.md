@@ -6,7 +6,7 @@ Welcome to SentenceTransformers Bodhilib plugin's documentation!
 :hidden:
 
 installation
-reference/modules
+reference/bodhiext.sentence_transformers
 ```
 
 SentenceTransformers Bodhilib plugin is a plugin for [bodhilib](https://github.com/bodhisearch/bodhilib) library. It adds the capability to Bodhilib plugin for Sentence Transformer Embedder
