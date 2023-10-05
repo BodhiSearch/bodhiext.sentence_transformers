@@ -57,6 +57,9 @@ test-all: ## run all tests including integration tests
 check:
 	poetry check --lock
 
+build: clean install
+	poetry build
+
 coverage: ## check code coverage quickly with the default Python
 	poetry run pytest --cov-report html --cov=src tests_bodhiext_sentence_transformers
 	$(BROWSER) htmlcov/index.html
