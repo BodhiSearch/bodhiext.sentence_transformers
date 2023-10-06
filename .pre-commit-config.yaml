@@ -17,3 +17,12 @@ repos:
     rev: v0.0.283
     hooks:
       - id: ruff
+  - repo: local
+    hooks:
+      - id: update-docs-requirements-txt
+        name: update-docs-requirements-txt
+        description: 'Generate docs/requirements.txt based on poetry.lock'
+        entry: poetry
+        args: [export, --format, requirements.txt, --with, docs, --output, docs/requirements.txt]
+        language: system
+        pass_filenames: false

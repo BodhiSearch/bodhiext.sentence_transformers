@@ -1,4 +1,4 @@
-name: SentenceTransformers Bodhilib plugin CI/CD
+name: bodhiext.sentence_transformers
 on:
   pull_request:
   push:
@@ -53,11 +53,14 @@ jobs:
         run: cp .env.ci .env.test
       - name: Run tests
         run: make test
-      - name: Upload coverage report
-        uses: actions/upload-artifact@v3
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v3
         with:
-          name: coverage
-          path: htmlcov
+          env_vars: OS,PYTHON
+          file: ./coverage.xml
+          flags: unittests
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 
   release:
     needs: [pre-commit, test]
