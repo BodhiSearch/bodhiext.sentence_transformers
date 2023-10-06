@@ -48,8 +48,8 @@ lint/ruff: ## check style with ruff
 
 lint: lint/ruff ## check style
 
-test: ## run unit tests
-	poetry run pytest
+test: install
+	poetry run pytest --cov=bodhilib --cov-report=html
 
 test-all: ## run all tests including integration tests
 	poetry run pytest -m all
